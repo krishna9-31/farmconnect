@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmConnect</title>
+    <style>
+        /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f5e9;
+    margin: 0;
+    padding: 0;
+} */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #dce7c5;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav-links li:hover .dropdown {
+    display: block;
+}
+.search-bar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Styling the main dropdown container */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown link */
+.dropdown-container a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding-right: 20px; /* Adds space for the dropdown arrow */
+}
+
+/* Adding a dropdown arrow next to the link */
+.dropdown-container a::after {
+    content: "▼"; /* Unicode character for a downward arrow */
+    font-size: 12px;
+    margin-left: 5px; /* Space between text and arrow */
+    vertical-align: middle; /* Align the arrow vertically */
+}
+
+/* Hide dropdown by default */
+.dropdown {
+    display: none;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Style each dropdown item */
+.dropdown li {
+    padding: 10px;
+    width: 200px;
+}
+
+/* Styling the links inside the dropdown items */
+.dropdown li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 12px;
+}
+
+/* Hover effect for links */
+.dropdown li a:hover {
+    background-color: #f1f1f1;
+    color: #007BFF;
+}
+
+/* Show the dropdown when hovering over the main container */
+.dropdown-container:hover .dropdown {
+    display: block;
+}
+
+/* Optional: Add a hover effect to the parent link */
+.dropdown-container a:hover {
+    color: #007BFF;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+.hero-content {
+    max-width: 50%;
+}
+.hero h1, .hero h2 {
+    margin: 10px 0;
+}
+.highlight {
+    color: #2e7d32;
+    font-weight: bold;
+}
+.cta {
+    padding: 10px 20px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.hero-image img {
+    width: 400px;
+    border-radius: 10px;
+}
+.hero1 {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #4f6f1d;
+padding: 40px;
+height: 70vh;
+}
+
+.content {
+max-width: 50%;
+color: white;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+h3 span {
+    font-weight: bold;
+}
+
+#he1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+
+.image img {
+    max-width: 500px;
+    height: static;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f6f9f2;
+}
+.container {
+    margin-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header {
+    margin-top: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.feature {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 30%;
+    min-width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+}
+.feature img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.feature h3 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+.feature p {
+    font-size: 14px;
+    color: #555;
+    padding: 0 15px;
+}
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature {
+        width: 80%;
+    }
+}
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef5e2;
+} */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #eef5e2;
+    color: black;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-section h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.green-text {
+    color: green;
+    font-weight: bold;
+}
+
+.footer-section p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">farmconnect</div>
+            <ul class="nav-links">
+                 
+                <div><a href="https://krishna9-31.github.io/jshdf/">Sell Crops</a></div>
+                    <div><a href="https://krishna9-31.github.io/hellow/">Farmer to Farmer</a></div>
+                        <div><a href="https://krishna9-31.github.io/sudhee/">Global Markets</a></div>
+                        <li class="dropdown-container">
+                            <a href="#">More Features</a>
+                            <ul class="dropdown">
+                                <li><a href="#">AI Powered Smart Farming</a></li>
+                                <li><a href="#">Resources</a></li>
+                                <li><a href="#">Community Support</a></li>
+                            </ul>
+                        </li>
+                        
+    
+                 <!-- <li><a href="#">More Features</a>
+                    <ul class="dropdown">
+                        <div><a href="#">AI Powered Smart Farming</a></div>
+                        <div><a href="#">Resources</div>
+                        <div><a href="#">Community Support</a></div>
+                    </ul>
+                </li> -->
+          </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Product">
+            </div>
+            <div><a href="https://krishna9-31.github.io/klen/">My Cart</a></div>
+            <div><a href="https://krishna9-31.github.io/hello/">Profile</a></div>
+           
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unlock Profitable Opportunities</h1>
+            <h2><span class="highlight">Empower Your Farming Strategy</span></h2>
+            <h2>Join a Sustainable Community</h2>
+            <p>Sell your surplus crops directly to buyers worldwide with FarmConnect. Exchange crops with fellow farmers to balance your yields and ensure no produce goes to waste.</p>
+            <button class="cta">Start Selling And Consuming</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://wallpapercave.com/wp/wp2916561.jpg" alt="Farming Field">
+        </div>
+    </section>
+    <section class="hero1">
+        <div class="content">
+            <h3>Transform your agricultural journey with <br><span>FarmConnect</span></h3>
+            <h1 id="he1">Efficient solutions <br> to sell <br> surplus crops <br> and connect with <br> global markets</h1>
+        </div>
+        <div class="image">
+            <img src="https://cleangreensimple.com/wp-content/uploads/woman-carrying-fruits-vegetables-800x533.jpg" alt="Smiling Farmer">
+        </div>
+    </section>
+    <div class="container">
+        <div class="header">Transforming Agricultural Practices with FarmConnect</div>
+        <div class="features">
+            <div class="feature">
+                <img src="https://tse4.mm.bing.net/th?id=OIP._koFvqvqzVy-Go09xG-0wQHaE7&pid=Api&P=0&h=180" alt="Sell Surplus Directly">
+                <h3>Sell Surplus Directly</h3>
+                <p>List excess crops for direct sale to buyers worldwide.</p>
+            </div>
+            <div class="feature">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.YZ51wLBCCqn8EEuAevCNMgHaE8&pid=Api&P=0&h=180" alt="Trade with other Farmers">
+                <h3>Trade with other Farmers</h3>
+                <p>Exchange crops to balance surplus and shortages efficiently.</p>
+            </div>
+            <div class="feature">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.uxhO9JymN9eHtlU9re5PPwHaE7&pid=Api&P=0&h=180" alt="Donate to Charities">
+                <h3>Donate to Charities</h3>
+                <p>Redirect unsold produce to food banks and communities in need.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-section">
+            <h2><span class="green-text">Farm</span>Connect</h2>
+            <p>Connecting Farmers with Global Markets and Innovations</p>
+        </div>
+        <div class="footer-section">
+            <h2>Menu</h2>
+            <ul>
+                <li>Sell Surplus Directly</li>
+                <li>Trade with other Farmers</li>
+                <li>Donate to Charities</li>
+                <li>AI powered Smart Farming</li>
+                <li>Direct Access To Global Markets</li>
+                <li>Real-time Market And Price Tracking</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Selling Crops</li>
+                <li>Crop Exchange Platform</li>
+                <li>Charitable Donations</li>
+                <li>AI Farming Insights</li>
+                <li>Global Market Access</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Reach Out</h2>
+            <p>📞 720 588-8452</p>
+            <p>📧 info@farmconnect.com</p>
+            <p>📍 Visakhapatnam, India</p>
+        </div>
+    </footer>
+</body>
+</html>
